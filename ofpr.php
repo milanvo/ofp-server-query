@@ -1,10 +1,15 @@
 <?php
 //
-// OFP CLASS Version 2.01
+// OFP CLASS Version 2.05
 //
 // Version history:
 
-// 06/08-2002 (Version 2.01)
+// 18/08-2002 (version 2.05) by: [WKK]-EazyOne
+// - lines 235 to 238 have been quoted for Win2000 compatibility (thx Mivo)
+// - You can try unquoting these lines if having trouble
+// - Code changed so RTSQ shows the "real" name of island (ie. Nogova insteadt of Noa)
+
+// 06/08-2002 (Version 2.01) by: Mivo
 // - Compatible with Operation Flashpoint:Resistance and new netcode versions (1.60 and above ?) servers 
 //   in Sockets and DirectPlay network mode
 // - corrected problem in player table if mixed players with and without squad name
@@ -79,7 +84,7 @@ Class Ofp {
 	// System definition. Which system is PHP running @ 0 (default) = Linux/Unix, 1 = Windows
 	// This HAS to be defined, as Windows does NOT support socket_timeout functions in PHP.
 	//
-	var $system			=0;
+	var $system			=1;
 
 	//
 	// Get exact time, used for timeout counting
@@ -221,11 +226,16 @@ Class Ofp {
 		$cmd="\x00\x02\x12\x00\x01\x60\x98\x24\xF7\xBE\xD0\xD2\x11\x95\xEA\x00\xA0\xC9\xA5\x7F\x0B";
 		$cmd2="\\status\\";
 		$this->serverquerytype=false;
-
-		if ($serverdata2=$this->getServerData("ofpinfo",$cmd,$serveraddress,$portnumber,$timeout)) {
-			$this->serverquerytype="basic";
-			$this->correctdata ($serverdata2);
-		}
+// ********************************************
+// ** EazyOne:                               **
+// ** Thx to Mivo for providing me with info **
+// ** Next lines are quoted for making OFPR  **
+// ** Work on Win2000                        **
+// ********************************************
+//		if ($serverdata2=$this->getServerData("ofpinfo",$cmd,$serveraddress,$portnumber,$timeout)) {
+//			$this->serverquerytype="basic";
+//			$this->correctdata ($serverdata2);
+//		}
 
 		//
 		// Whether or NOT to run the GS query, to get extended server-info.

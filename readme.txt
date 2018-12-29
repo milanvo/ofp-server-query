@@ -5,6 +5,11 @@ Real Time OFP server query
 **************************
 
 ------------------------------------------------------------------------------------------------------
+Minor inprovements :
+- see: ofpr.php (thx Mivo)
+- Shows real name of Island (ie: Nogova insteadt of Noe etc.)
+- example-file especially for PHP-nuke
+------------------------------------------------------------------------------------------------------
 New version of [WKK] RealTime Server Query (RTSQ) for OFP
 
 06 Aug 2002 - Changes by Mivo (mivo@post.cz) [CzSk1985] OFP Squad (http://ofp.stopiv.cz)
@@ -44,7 +49,8 @@ The source consists of the following files:
 ------------------------------------------------------------------------------------------------------
 
 "ofpr.php" (class/library for querying OFP servers)
-"ofpquery.php" (example-file showing how to query, display results on a webpage).
+"serverqueries.php" (example-file showing how to query, display results on a webpage).
+"serverqueries_nuke.php" (example-file showing how to query, made especially for PHP-nuke)
 "pixel1.gif" (1 pixel gif - black, for FANCY serverload graphics).
 "pixel2.gif" (1 pixel gif - transparent, for FANCY serverload graphics).
 
